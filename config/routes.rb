@@ -1,4 +1,11 @@
+
+
 Rails.application.routes.draw do
+
+  namespace :api, defaults: {format: 'json'} do
+    get 'application/status' => 'application#status'
+    post 'application/validarFirma' => 'validarFirma'
+  end
   
   root 'welcome#index'
 
