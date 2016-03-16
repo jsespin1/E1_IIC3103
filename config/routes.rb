@@ -2,14 +2,14 @@
 
 Rails.application.routes.draw do
 
-  namespace :api, defaults: {format: 'json'} do
-    get 'application/status' => 'application#status'
-    post 'application/validarFirma' => 'validarFirma'
-  end
-  
   root 'welcome#index'
-
   get 'welcome/index'
+  
+  get 'welcome/status' => 'welcome#status'
+  post 'welcome/validarFirma' => 'validarFirma'
+  get 'welcome/error400' => 'welcome#error400'
+  get 'welcome/error500' => 'welcome#error500'
+  get 'welcome/status201' => 'welcome#status201'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
